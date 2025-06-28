@@ -29,12 +29,12 @@ const apiError = ref(null)
 onMounted(async () => {
   try {
     // Load docs.json
-    const docsRes = await fetch('/src/assets/docs.json')
+    const docsRes = await fetch('/docs.json')
     if (!docsRes.ok) throw new Error('Failed to load docs.json')
     const docsJson = await docsRes.json()
     sections.value = docsJson
     // Load swagger.json
-    const res = await fetch('/src/assets/swagger.json')
+    const res = await fetch('/swagger.json')
     if (!res.ok) throw new Error('Failed to load API spec')
     const json = await res.json()
     if (Object.keys(json).length === 0) {
