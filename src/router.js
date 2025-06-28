@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from './pages/Home.vue'
 import QuickStart from './pages/QuickStart.vue'
 import Docs from './pages/Docs.vue'
@@ -12,7 +12,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory('/caddymanager-website/'), // Use hash mode for GitHub Pages
   routes,
 })
 
