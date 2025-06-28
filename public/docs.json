@@ -1,0 +1,112 @@
+[
+  {
+    "id": "about",
+    "title": "About CaddyManager",
+    "description": "Easily manage your Caddy2 servers using a modern web UI, built on the MEVN stack (MongoDB, Express, Vue, Node.js).",
+    "content": "<p>CaddyManager provides a powerful, user-friendly dashboard for managing multiple Caddy2 servers, with real-time monitoring, configuration editing, and secure access controls.</p>",
+    "category": "overview",
+    "order": 0,
+    "icon": "🧑‍💻"
+  },
+  {
+    "id": "features",
+    "title": "Features",
+    "description": "Key features of CaddyManager.",
+    "content": "<ul class='list-disc list-inside mb-4'>\n<li><b>Multi-Server Management:</b> Add, remove, and monitor multiple Caddy2 servers from a single dashboard.</li>\n<li><b>Configuration Editor:</b> Create, edit, and validate Caddyfiles with syntax highlighting and templates.</li>\n<li><b>User Authentication:</b> Secure login, JWT-based sessions, and role-based access control.</li>\n<li><b>API Key Management:</b> Generate and revoke API keys for programmatic access.</li>\n<li><b>Audit Logging:</b> Track all user and system actions for security and compliance.</li>\n<li><b>Real-Time Status:</b> Live server health checks and status updates.</li>\n<li><b>Integrated Swagger API Docs:</b> Explore and test backend APIs directly from the UI.</li>\n<li><b>Responsive Design:</b> Works great on desktop and mobile devices.</li>\n</ul>",
+    "category": "overview",
+    "order": 1,
+    "icon": "🚀"
+  },
+  {
+    "id": "tech-stack",
+    "title": "Tech Stack",
+    "description": "Technologies used in CaddyManager.",
+    "content": "<ul class='list-disc list-inside mb-4'>\n<li><b>Frontend:</b> Vue 3, Vite, Pinia, Vue Router</li>\n<li><b>Backend:</b> Node.js, Express, MongoDB</li>\n<li><b>Caddy Integration:</b> RESTful API for Caddy2 server management</li>\n</ul>",
+    "category": "overview",
+    "order": 3,
+    "icon": "📦"
+  },
+  {
+    "id": "getting-started",
+    "title": "Getting Started",
+    "description": "How to quickly get up and running with CaddyManager.",
+    "content": "<ol class='list-decimal list-inside mb-4'>\n<li><b>Clone the repository:</b><br><code>git clone https://github.com/YOUR_USERNAME/caddymanager.git</code></li>\n<li><b>Install dependencies:</b><br><code>cd backend &amp;&amp; npm install</code><br><code>cd ../frontend &amp;&amp; npm install</code></li>\n<li><b>Configure environment:</b> Copy <code>.env.example</code> to <code>.env</code> in both <code>backend/</code> and <code>frontend/</code> and update values as needed.</li>\n<li><b>Run the app:</b><br>Start backend:<br><code>cd backend &amp;&amp; npm start</code><br>Start frontend:<br><code>cd frontend &amp;&amp; npm run dev</code></li>\n</ol>",
+    "category": "guide",
+    "order": 4,
+    "icon": "🛠️",
+    "links": [
+      { "label": "Quick Start", "url": "/quickstart" },
+      { "label": "GitHub Repository", "url": "https://github.com/caddymanager/caddymanager" }
+    ]
+  },
+  {
+    "id": "env-vars",
+    "title": "Environment Variables",
+    "description": "List of important environment variables for both frontend and backend.",
+    "content": "<h4 class='font-bold mt-2 mb-1'>Frontend</h4>\n<ul class='list-disc list-inside mb-2'>\n<li><code>API_BASE_URL</code></li>\n<li><code>APP_NAME</code></li>\n<li><code>DARK_MODE</code></li>\n</ul>\n<h4 class='font-bold mt-2 mb-1'>Backend</h4>\n<ul class='list-disc list-inside mb-2'>\n<li><code>PORT</code></li>\n<li><code>NODE_ENV</code></li>\n<li><code>MONGODB_URI</code></li>\n<li><code>CORS_ORIGIN</code></li>\n<li><code>LOG_LEVEL</code></li>\n<li><code>DEFAULT_CADDY_ADMIN_USER</code></li>\n<li><code>DEFAULT_CADDY_ADMIN_PASSWORD</code></li>\n<li><code>CADDY_SANDBOX_URL</code></li>\n<li><code>PING_INTERVAL</code></li>\n<li><code>PING_TIMEOUT</code></li>\n<li><code>AUDIT_LOG_MAX_SIZE_MB</code></li>\n<li><code>AUDIT_LOG_RETENTION_DAYS</code></li>\n</ul>",
+    "category": "reference",
+    "order": 5,
+    "icon": "🧩"
+  },
+  {
+    "id": "docker-compose",
+    "title": "Docker Compose Example",
+    "description": "Sample docker-compose.yml for running backend and frontend.",
+    "content": "<pre class='bg-black/80 text-white p-4 rounded text-xs overflow-x-auto'><code>services:\n  backend:\n    image: ghcr.io/caddymanager/caddymanager-backend:stable\n    container_name: caddymanager-backend\n    restart: unless-stopped\n    environment:\n      - PORT=3000\n      - MONGODB_URI=\n      - CORS_ORIGIN=http://localhost:5173\n      - LOG_LEVEL=debug\n      - DEFAULT_CADDY_ADMIN_USER=admin\n      - DEFAULT_CADDY_ADMIN_PASSWORD=caddyrocks\n      - CADDY_SANDBOX_URL=http://localhost:2019\n      - PING_INTERVAL=30000\n      - PING_TIMEOUT=2000\n      - AUDIT_LOG_MAX_SIZE_MB=100\n      - AUDIT_LOG_RETENTION_DAYS=90\n    ports:\n      - \"3000:3000\"\n    networks:\n      - caddymanager\n\n  frontend:\n    image: ghcr.io/caddymanager/caddymanager-frontend:stable\n    container_name: caddymanager-frontend\n    restart: unless-stopped\n    environment:\n      - API_BASE_URL=http://localhost:3000/api/v1\n      - APP_NAME=Caddy Manager\n      - DARK_MODE=true\n    ports:\n      - \"80:80\"\n    networks:\n      - caddymanager\n\nnetworks:\n  caddymanager:\n    driver: bridge\n</code></pre>",
+    "category": "reference",
+    "order": 6,
+    "icon": "🐳"
+  },
+  {
+    "id": "resources",
+    "title": "More Resources",
+    "description": "Helpful links and resources for Caddy Manager and Caddy itself.",
+    "content": "<ul class='list-disc list-inside'><li><a href='https://github.com/caddymanager/caddymanager' target='_blank' class='underline hover:text-accent-1-dark'>GitHub Repository</a></li><li><a href='https://caddyserver.com/docs/' target='_blank' class='underline hover:text-accent-1-dark'>Caddy Official Documentation</a></li></ul>",
+    "category": "resources",
+    "order": 7,
+    "icon": "📚",
+    "links": [
+      { "label": "Caddy Manager GitHub", "url": "https://github.com/caddymanager/caddymanager" },
+      { "label": "Caddy Docs", "url": "https://caddyserver.com/docs/" }
+    ]
+  },
+  {
+    "id": "faq",
+    "title": "FAQ",
+    "description": "Frequently asked questions about Caddy Manager.",
+    "content": "<p>Coming soon: Frequently asked questions about Caddy Manager.</p>",
+    "category": "faq",
+    "order": 8,
+    "icon": "❓"
+  },
+  {
+    "id": "contributing",
+    "title": "Contributing",
+    "description": "How to contribute to Caddy Manager.",
+    "content": "<p>We welcome contributions! Please see our <a href='https://github.com/caddymanager/caddymanager/blob/main/CONTRIBUTING.md' target='_blank' class='underline hover:text-accent-1-dark'>contributing guide</a> for details on how to get started, report issues, or submit pull requests.</p>",
+    "category": "guide",
+    "order": 9,
+    "icon": "🤝",
+    "links": [
+      { "label": "Contributing Guide", "url": "https://github.com/caddymanager/caddymanager/blob/main/CONTRIBUTING.md" }
+    ]
+  },
+  {
+    "id": "license",
+    "title": "License",
+    "description": "Project license information.",
+    "content": "<p>Caddy Manager is open source and licensed under the <a href='https://github.com/caddymanager/caddymanager/blob/main/LICENSE' target='_blank' class='underline hover:text-accent-1-dark'>MIT License</a>.</p>\n<div class='max-w-2xl mx-auto mt-6 text-xs text-white/80 leading-relaxed'><strong>Disclaimer:</strong> This project is not endorsed by, directly affiliated with, maintained, authorized, or sponsored by Caddy, Matthew Holt, Stack Holdings GmbH, or ZeroSSL. The name &quot;Caddy&quot; is a registered trademark of Stack Holdings GmbH. All information about Caddy, its history, and trademarks is provided for reference only.</div>",
+    "category": "legal",
+    "order": 10,
+    "icon": "📄"
+  },
+  {
+    "id": "status",
+    "title": "Project Status",
+    "description": "Current status and development phase.",
+    "content": "<p>This project is in active development, gearing up for a v0.1 release. Feedback and testing are appreciated!</p>",
+    "category": "overview",
+    "order": 11,
+    "icon": "📢"
+  }
+]
