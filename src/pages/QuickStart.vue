@@ -46,7 +46,7 @@ async function copyCompose() {
 
 onMounted(async () => {
   try {
-    const res = await fetch('/src/assets/docs.json')
+    const res = await fetch('/docs.json')
     if (!res.ok) throw new Error('Failed to load docs.json')
     const docs = await res.json()
     const dockerSection = docs.find(s => s.id === 'docker-compose')
