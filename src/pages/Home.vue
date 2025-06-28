@@ -1,7 +1,15 @@
 <template>
   <div class="flex flex-col items-center justify-center text-center w-full relative overflow-x-hidden">
+    <!-- Decorative crosses from Roadmap.vue -->
     <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-      <svg class="racing-lines w-full h-full" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <span class="map-cross map-cross-xl absolute left-[-3vw] top-[10vh] animate-breath-slow text-accent-1/60">✕</span>
+      <span class="map-cross absolute left-8 top-32 animate-breath text-accent-1/80">✕</span>
+      <span class="map-cross absolute right-24 top-20 animate-breath-slow text-accent-2/70">✕</span>
+      <span class="map-cross absolute right-[22%] bottom-24 animate-breath text-accent-1/60">✕</span>
+      <span class="map-cross absolute left-[38%] top-[58%] animate-breath-slow text-accent-3/70">✕</span>
+      <span class="map-cross absolute left-[70%] bottom-10 animate-breath text-accent-2/60">✕</span>
+      <!-- Fewer animated racing lines for a cleaner look -->
+      <svg class="racing-lines w-full h-full absolute inset-0" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
         <defs>
           <linearGradient id="racing1" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stop-color="#e94e77" />
@@ -9,18 +17,6 @@
           </linearGradient>
           <linearGradient id="racing2" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stop-color="#c33c54" />
-            <stop offset="100%" stop-color="#e94e77" />
-          </linearGradient>
-          <linearGradient id="racing3" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#3a3a5d" />
-            <stop offset="100%" stop-color="#e94e77" />
-          </linearGradient>
-          <linearGradient id="racing4" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#e94e77" />
-            <stop offset="100%" stop-color="#c33c54" />
-          </linearGradient>
-          <linearGradient id="racing5" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#3a3a5d" />
             <stop offset="100%" stop-color="#e94e77" />
           </linearGradient>
           <linearGradient id="fade-mask" x1="0" y1="0" x2="1" y2="0">
@@ -36,9 +32,6 @@
         <g class="racing-group" mask="url(#racing-fade-mask)">
           <line x1="1800" y1="900" x2="-200" y2="100" stroke="url(#racing1)" stroke-width="6" stroke-dasharray="40 32" opacity="0.13" class="racing-line racing-line-1" />
           <line x1="1700" y1="800" x2="-100" y2="0" stroke="url(#racing2)" stroke-width="4" stroke-dasharray="32 24" opacity="0.10" class="racing-line racing-line-2" />
-          <line x1="1600" y1="1000" x2="0" y2="200" stroke="url(#racing3)" stroke-width="8" stroke-dasharray="56 40" opacity="0.09" class="racing-line racing-line-3" />
-          <line x1="1750" y1="950" x2="-150" y2="150" stroke="url(#racing4)" stroke-width="3" stroke-dasharray="24 18" opacity="0.16" class="racing-line racing-line-4" />
-          <line x1="1650" y1="1100" x2="-50" y2="300" stroke="url(#racing5)" stroke-width="5" stroke-dasharray="48 36" opacity="0.11" class="racing-line racing-line-5" />
         </g>
       </svg>
     </div>
@@ -55,7 +48,7 @@
     <section class="w-full max-w-5xl mx-auto mt-8 mb-8">
       <h3 class="text-2xl md:text-3xl font-bold text-white mb-6 drop-shadow">Screenshots</h3>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div v-for="n in 3" :key="n" class="roadmap-panel animate-breath flex flex-col items-center justify-center min-h-[220px]">
+        <div v-for="n in 3" :key="n" class="roadmap-panel flex flex-col items-center justify-center min-h-[220px]">
           <div class="flex-1 flex items-center justify-center w-full h-full">
             <span class="text-white/60 italic">Screenshot {{ n }}</span>
           </div>
@@ -99,12 +92,28 @@ import Footer from '../components/Footer.vue'
   box-shadow: 0 12px 36px 0 rgba(80,80,120,0.22), 0 2px 12px 0 rgba(80,80,120,0.13);
   background: linear-gradient(120deg, rgba(255,255,255,0.19) 60%, rgba(255,255,255,0.11) 100%);
 }
-@keyframes breath {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.035); }
+.map-cross {
+  font-size: 4.2rem;
+  font-weight: bold;
+  opacity: 0.18;
+  filter: blur(1.2px);
+  pointer-events: none;
+  user-select: none;
 }
-.animate-breath {
-  animation: breath 7.2s cubic-bezier(.4,2,.6,1) infinite;
+.map-cross-xl {
+  font-size: 11vw;
+  opacity: 0.07;
+  filter: blur(2.5px);
+}
+.animate-breath { animation: breath 6.2s infinite; }
+.animate-breath-slow { animation: breath-slow 10.4s infinite; }
+@keyframes breath {
+  0%, 100% { transform: scale(1); opacity: 0.15; }
+  50% { transform: scale(1.08); opacity: 0.19; }
+}
+@keyframes breath-slow {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.15; }
+  50% { transform: scale(1.04) rotate(-3deg); opacity: 0.19; }
 }
 .racing-lines {
   position: absolute;
@@ -119,23 +128,11 @@ import Footer from '../components/Footer.vue'
   will-change: stroke-dashoffset;
 }
 .racing-line-1 {
-  animation: dash-move-1 1.2s linear infinite;
+  animation: dash-move-1 0.7s linear infinite;
 }
 .racing-line-2 {
-  animation: dash-move-2 1.6s linear infinite;
+  animation: dash-move-2 0.9s linear infinite;
   animation-delay: 0.3s;
-}
-.racing-line-3 {
-  animation: dash-move-3 2.1s linear infinite;
-  animation-delay: 0.7s;
-}
-.racing-line-4 {
-  animation: dash-move-4 0.7s linear infinite;
-  animation-delay: 0.1s;
-}
-.racing-line-5 {
-  animation: dash-move-5 0.95s linear infinite;
-  animation-delay: 0.5s;
 }
 @keyframes dash-move-1 {
   0% { stroke-dashoffset: 0; }
@@ -144,17 +141,5 @@ import Footer from '../components/Footer.vue'
 @keyframes dash-move-2 {
   0% { stroke-dashoffset: 0; }
   100% { stroke-dashoffset: -112px; }
-}
-@keyframes dash-move-3 {
-  0% { stroke-dashoffset: 0; }
-  100% { stroke-dashoffset: -192px; }
-}
-@keyframes dash-move-4 {
-  0% { stroke-dashoffset: 0; }
-  100% { stroke-dashoffset: -80px; }
-}
-@keyframes dash-move-5 {
-  0% { stroke-dashoffset: 0; }
-  100% { stroke-dashoffset: -160px; }
 }
 </style>

@@ -1,9 +1,11 @@
 <template>
   <div v-if="apiSpec">
-    <div v-for="(pathItem, path) in apiSpec.paths" :key="path" :id="'api-' + path" class="mb-8 scroll-mt-32 text-left">
+    <div v-for="(pathItem, path) in apiSpec.paths" :key="path" class="mb-8 text-left">
       <div class="bg-white/5 rounded-lg p-4 md:p-6 shadow border border-white/10 text-left">
         <h4 class="text-lg font-bold text-accent-1-dark mb-2 text-left">{{ path }}</h4>
-        <div v-for="(method, methodName) in pathItem" :key="methodName" class="mb-6 text-left">
+        <div v-for="(method, methodName) in pathItem" :key="methodName"
+          :id="`api-${methodName}-${path}`.replace(/[^a-zA-Z0-9-_]/g, '_')"
+          class="mb-6 text-left scroll-mt-32">
           <span class="inline-block bg-primary/80 text-white px-2 py-1 rounded text-xs font-mono uppercase mr-2">{{ methodName }}</span>
           <span class="font-semibold text-white/90">{{ method.summary || method.operationId || 'No summary' }}</span>
           <div v-if="method.description" class="text-white/70 text-sm mt-1" v-html="method.description"></div>
