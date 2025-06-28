@@ -1,0 +1,17 @@
+@import './breathing-background.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: rgb(195, 60, 84);
+  --color-primary-dark: rgb(130, 40, 55);
+  --color-secondary: rgb(37, 78, 131);
+  --color-secondary-dark: rgb(28, 49, 85);
+  --color-tertiary: rgb(55, 113, 142);
+  --color-tertiary-dark: rgb(42, 85, 107);
+  --color-accent-1: rgb(142, 227, 239);
+  --color-accent-1-dark: rgb(106, 189, 200);
+  --color-accent-2: rgb(174, 243, 231);
+  --color-accent-2-dark: rgb(130, 221, 210);
+}
