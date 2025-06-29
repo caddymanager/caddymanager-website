@@ -1,5 +1,5 @@
 <template>
-  <header class="fixed py-4 px-4 md:px-12 flex justify-between items-center bg-white/10 backdrop-blur-md shadow-lg rounded-b-xl w-full z-40 overflow-hidden">
+  <header class="fixed py-4 px-4 md:px-12 flex justify-between items-center bg-white/10 backdrop-blur-md shadow-lg  w-full z-40 overflow-hidden">
     <div class="flex items-center gap-3 z-10">
       <img src="https://caddyserver.com/resources/images/caddy-circle.svg" alt="Caddy Logo" class="h-10 w-10 bg-white/80 rounded-full p-1 shadow" />
       <h1 class="text-2xl md:text-3xl font-extrabold text-white drop-shadow tracking-tight">Caddy Manager</h1>
