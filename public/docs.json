@@ -106,5 +106,14 @@
     "category": "resources",
     "order": 11,
     "icon": "📬"
+  },
+  {
+    "id": "how-to-use",
+    "title": "How to Use CaddyManager",
+    "description": "Step-by-step guide to using the CaddyManager web UI and features.",
+    "content": "<h3 class='font-bold text-lg mb-2'>🖥️ How to Use CaddyManager</h3>\n<ol class='list-decimal list-inside mb-4'>\n<li><b>Access the Web UI:</b><br>Open your browser and go to <code>http://localhost</code> (or the address where your frontend is running).</li>\n<li><b>Sign In:</b><br>Log in using the admin credentials you set in your backend <code>.env</code> (<code>DEFAULT_CADDY_ADMIN_USER</code> / <code>DEFAULT_CADDY_ADMIN_PASSWORD</code>).</li>\n<li><b>Add and Manage Servers:</b><br>Navigate to the \"Servers\" section to add, edit, or remove Caddy servers.<br>You can monitor server status and view details for each server.</li>\n<li><b>Edit Configurations:</b><br>Use the \"Configurations\" section to create, edit, and validate Caddyfiles.<br>Built-in syntax highlighting and templates help you avoid errors.</li>\n<li><b>User & API Key Management:</b><br>Manage users and roles in the \"User Management\" section (admin only).<br>Generate and revoke API keys for programmatic access in the \"API Keys\" section.</li>\n<li><b>Audit Logs & Status:</b><br>View audit logs for all user/system actions in the \"Audit Logs\" section (admin only).</li>\n<li><b>API Documentation:</b><br>Explore and test backend APIs via the integrated Swagger UI at <code>/api-docs</code> (e.g., <code>http://localhost:3000/api-docs</code>).</li>\n</ol>",
+    "category": "guide",
+    "order": 2.5,
+    "icon": "🖥️"
   }
 ]

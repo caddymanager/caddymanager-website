@@ -48,24 +48,106 @@
     <section class="w-full max-w-5xl mx-auto mt-8 mb-8">
       <h3 class="text-2xl md:text-3xl font-bold text-white mb-6 drop-shadow">Screenshots</h3>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div v-for="n in 3" :key="n" class="roadmap-panel flex flex-col items-center justify-center min-h-[220px]">
-          <div class="flex-1 flex items-center justify-center w-full h-full">
-            <span class="text-white/60 italic">Screenshot {{ n }}</span>
-          </div>
-          <!-- Replace the above with <img :src="..." alt="Screenshot ..." class="w-full h-auto object-cover" /> when you have real images -->
-        </div>
+        <img
+          v-for="(shot, i) in screenshots"
+          :key="shot.file"
+          :src="shot.src"
+          :alt="shot.alt"
+          class="w-full h-auto object-cover rounded shadow-lg border border-white/10 bg-black/30 cursor-pointer transition hover:scale-105"
+          loading="lazy"
+          @click="openModal(shot)"
+        />
       </div>
     </section>
+
+    <!-- Modal for enlarged screenshot -->
+    <transition name="fade">
+      <div v-if="modalOpen" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80" @click.self="closeModal">
+        <div class="relative max-w-6xl w-full p-4 md:p-8">
+          <button @click="closeModal" class="absolute top-2 right-2 text-white text-2xl bg-black/40 rounded-full px-2 py-1 hover:bg-black/70 transition">&times;</button>
+          <img :src="modalShot.src" :alt="modalShot.alt" class="w-full max-h-[80vh] h-auto rounded shadow-2xl border border-white/20 bg-black/40 object-contain" />
+          <div class="mt-3 text-white/90 text-center text-lg">{{ modalShot.caption }}</div>
+        </div>
+      </div>
+    </transition>
     <Footer />
   </div>
 </template>
 
 <script setup>
-// No script needed for this simple landing page
+import { ref } from 'vue'
 import Footer from '../components/Footer.vue'
+const screenshots = [
+  {
+    file: 'caddymanager_servers.png',
+    src: '/screenshots/caddymanager_servers.png',
+    alt: 'Servers overview',
+    caption: 'Servers overview'
+  },
+  {
+    file: 'caddymanager_add_server.png',
+    src: '/screenshots/caddymanager_add_server.png',
+    alt: 'Add new server',
+    caption: 'Add new server'
+  },
+  {
+    file: 'caddymanager_new_configuration.png',
+    src: '/screenshots/caddymanager_new_configuration.png',
+    alt: 'New configuration',
+    caption: 'New configuration editor'
+  },
+  {
+    file: 'caddymanager_view_configuration.png',
+    src: '/screenshots/caddymanager_view_configuration.png',
+    alt: 'View configuration',
+    caption: 'View configuration'
+  },
+  {
+    file: 'caddymanager_view_configuration_expanded.png',
+    src: '/screenshots/caddymanager_view_configuration_expanded.png',
+    alt: 'Expanded configuration',
+    caption: 'Expanded configuration view'
+  },
+  {
+    file: 'caddymanager_templating1.png',
+    src: '/screenshots/caddymanager_templating1.png',
+    alt: 'Templating',
+    caption: 'Caddyfile templating'
+  },
+  {
+    file: 'caddymanager_auditlog.png',
+    src: '/screenshots/caddymanager_auditlog.png',
+    alt: 'Audit log',
+    caption: 'Audit log overview'
+  },
+  {
+    file: 'caddymanager_auditlog_details.png',
+    src: '/screenshots/caddymanager_auditlog_details.png',
+    alt: 'Audit log details',
+    caption: 'Audit log details'
+  },
+  {
+    file: 'caddymanager_servers_list.png',
+    src: '/screenshots/caddymanager_servers_list.png',
+    alt: 'Servers list',
+    caption: 'Servers list view'
+  }
+]
+
+const modalOpen = ref(false)
+const modalShot = ref({})
+function openModal(shot) {
+  modalShot.value = shot
+  modalOpen.value = true
+}
+function closeModal() {
+  modalOpen.value = false
+}
 </script>
 
 <style scoped>
+.fade-enter-active, .fade-leave-active { transition: opacity 0.2s; }
+.fade-enter-from, .fade-leave-to { opacity: 0; }
 .roadmap-panel {
   background: linear-gradient(120deg, rgba(255,255,255,0.13) 60%, rgba(255,255,255,0.07) 100%);
   border-radius: 1.25rem;

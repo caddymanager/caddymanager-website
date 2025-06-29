@@ -98,8 +98,12 @@ function toggleApiMenu() {
 }
 watch(() => props.apiSpec, () => { apiMenuOpen.value = false })
 const filteredSections = computed(() => {
-  if (!search.value) return props.sections
-  return props.sections.filter(s => s.title.toLowerCase().includes(search.value.toLowerCase()))
+  let arr = props.sections ? [...props.sections] : [];
+  if (search.value) {
+    arr = arr.filter(s => s.title.toLowerCase().includes(search.value.toLowerCase()))
+  }
+  // Always sort by 'order' property (lowest to highest)
+  return arr.sort((a, b) => (a.order || 0) - (b.order || 0))
 })
 const filteredApiPaths = computed(() => {
   if (!props.apiSpec || !props.apiSpec.paths) return []
