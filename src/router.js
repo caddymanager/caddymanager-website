@@ -12,7 +12,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHashHistory('/caddymanager-website/'), // Use hash mode for GitHub Pages
+  history: createWebHashHistory('/'), // Use hash mode for GitHub Pages
   routes,
 })
 
