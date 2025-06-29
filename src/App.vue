@@ -1,7 +1,10 @@
 <template>
   <div class="min-h-screen flex flex-col breathing-background-gentle custom-scrollbar scrollbar-thin scrollbar-thumb-primary scrollbar-track-transparent">
     <Navbar />
-    <main class="flex-1 flex flex-col items-center justify-center text-center px-4 w-full mt-14 custom-scrollbar scrollbar-thin scrollbar-thumb-primary scrollbar-track-transparent">
+    <main
+      class="flex-1 flex flex-col items-center justify-center text-center px-4 w-full custom-scrollbar scrollbar-thin scrollbar-thumb-primary scrollbar-track-transparent"
+      :style="{ paddingTop: 'var(--navbar-height, 8rem)' }"
+    >
       <keep-alive include="Docs">
         <router-view />
       </keep-alive>
@@ -34,5 +37,13 @@ import Navbar from './components/Navbar.vue'
   scrollbar-width: thin;
   scrollbar-color: #c33c54 #23233a;
   color-scheme: dark;
+}
+:root {
+  --navbar-height: 8rem;
+}
+@media (max-width: 640px) {
+  :root {
+    --navbar-height: 4.5rem;
+  }
 }
 </style>

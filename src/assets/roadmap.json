@@ -1,9 +1,0 @@
-[
-  {
-    "id": "roadmap",
-    "title": "Roadmap",
-    "description": "Upcoming features and development milestones for Caddy Manager.",
-    "content": "<div class='relative pl-6 md:pl-12'><div class='absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-accent-1 via-accent-2 to-accent-3 rounded-full'></div><ul class='space-y-8'><li><div class='flex items-center mb-1'><span class='inline-block w-3 h-3 rounded-full bg-accent-1 mr-3'></span><span class='font-semibold text-lg text-white'>v0.1 – Public Beta</span></div><ul class='ml-7 text-white/80 text-base list-disc'><li>Initial release with multi-server management</li><li>Live Caddyfile editor & validation</li><li>API key management</li><li>Audit logging</li><li>Swagger-based API docs</li></ul></li><li><div class='flex items-center mb-1'><span class='inline-block w-3 h-3 rounded-full bg-accent-2 mr-3'></span><span class='font-semibold text-lg text-white'>v0.2 – Quality of Life</span></div><ul class='ml-7 text-white/80 text-base list-disc'><li>Role-based access control</li><li>Improved mobile UI</li><li>Server groupings/tags</li><li>Enhanced status monitoring</li></ul></li><li><div class='flex items-center mb-1'><span class='inline-block w-3 h-3 rounded-full bg-accent-3 mr-3'></span><span class='font-semibold text-lg text-white'>v1.0 – General Availability</span></div><ul class='ml-7 text-white/80 text-base list-disc'><li>Plugin marketplace</li><li>Automated backups</li><li>Multi-language support</li><li>Extensive documentation</li></ul></li></ul></div>",
-    "icon": "🗺️"
-  }
-]

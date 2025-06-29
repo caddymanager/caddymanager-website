@@ -16,7 +16,7 @@
     </div>
     <div class="w-full max-w-none pt-24 pb-24 px-2 md:px-8 relative z-10">
       <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 flex items-center gap-3 justify-center">
-        <span>🗺️</span> Roadmap
+        Roadmap
       </h1>
       <p class="text-lg text-white/80 mb-12">Upcoming features and development milestones for Caddy Manager.</p>
       <div class="relative flex flex-col items-center w-full">
@@ -56,24 +56,28 @@
           <li class="flex flex-col items-center w-1/3" style="transform: translateY(40px);">
             <div class="flex flex-col items-center">
               <span class="inline-block w-7 h-7 rounded-full bg-accent-2 border-4 border-white shadow-lg mb-2"></span>
-              <span class="font-semibold text-xl md:text-2xl text-white mb-2">v0.2 – Quality of Life</span>
+              <span class="font-semibold text-xl md:text-2xl text-white mb-2">v0.2 – Minimal spec</span>
             </div>
             <ul class="roadmap-panel">
-              <li>Role-based access control</li>
-              <li>Improved mobile UI</li>
-              <li>Server groupings/tags</li>
-              <li>Enhanced status monitoring</li>
+              <li>Dashboard</li>
+              <li>Bulk actions using tags</li>
+              <li>Dark mode</li>
+              <li>Improved accesibility features</li>
             </ul>
           </li>
           <li class="flex flex-col items-center w-1/3" style="transform: translateY(-20px);">
             <div class="flex flex-col items-center">
               <span class="inline-block w-7 h-7 rounded-full bg-accent-3 border-4 border-white shadow-lg mb-2"></span>
-              <span class="font-semibold text-xl md:text-2xl text-white mb-2">v1.0 – General Availability</span>
+              <span class="font-semibold text-xl md:text-2xl text-white mb-2">v0.x – Feature releases</span>
             </div>
             <ul class="roadmap-panel">
-              <li>Plugin marketplace</li>
-              <li>Automated backups</li>
+              <li>Configuration versioning</li>
+              <li>Git &amp; S3 import/export</li>
+              <li>Quick start toolkit</li>
+              <li>OIDC</li>
+              <li>RBAC &amp; tenancy</li>
               <li>Multi-language support</li>
+              <li>More advanced templating</li>
               <li>Extensive documentation</li>
             </ul>
           </li>

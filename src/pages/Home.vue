@@ -36,11 +36,11 @@
       </svg>
     </div>
     <h2 class="text-3xl md:text-5xl font-extrabold mb-4 text-white drop-shadow">Open Source Caddy Server Management</h2>
-    <p class="text-lg md:text-xl text-white mb-8 max-w-2xl mx-auto font-medium drop-shadow">Caddy Manager is a free, open source tool to easily manage your Caddy web server with a beautiful UI, automation, and powerful features. Simplify your workflow and focus on what matters.</p>
+    <p class="text-lg md:text-xl text-white mb-8 max-w-2xl mx-auto font-medium drop-shadow">Caddy Manager is a free, open source tool to easily manage your Caddy web servers with a modern web interace. Simplify your workflow and focus on what matters.</p>
     <ul class="mb-8 space-y-2 text-left">
-      <li class="flex items-center text-base md:text-lg text-white font-semibold drop-shadow"><span class="text-accent-1-dark mr-2">✔️</span> Easy site and SSL management</li>
-      <li class="flex items-center text-base md:text-lg text-white font-semibold drop-shadow"><span class="text-accent-1-dark mr-2">✔️</span> Automated backups & restores</li>
-      <li class="flex items-center text-base md:text-lg text-white font-semibold drop-shadow"><span class="text-accent-1-dark mr-2">✔️</span> User-friendly dashboard</li>
+      <li class="flex items-center text-base md:text-lg text-white font-semibold drop-shadow"><span class="text-accent-1-dark mr-2">✔️</span> Import configurations from Caddy</li>
+      <li class="flex items-center text-base md:text-lg text-white font-semibold drop-shadow"><span class="text-accent-1-dark mr-2">✔️</span> Deploy new configurations to Caddy</li>
+      <li class="flex items-center text-base md:text-lg text-white font-semibold drop-shadow"><span class="text-accent-1-dark mr-2">✔️</span> Multi-user</li>
       <li class="flex items-center text-base md:text-lg text-white font-semibold drop-shadow"><span class="text-accent-1-dark mr-2">✔️</span> Open source & community-driven</li>
     </ul>
     <a href="https://github.com/caddymanager/caddymanager" target="_blank" rel="noopener" class="inline-block bg-secondary text-white px-8 py-3 rounded-lg text-lg font-semibold shadow hover:bg-secondary-dark transition mb-12">Get Started on GitHub</a>

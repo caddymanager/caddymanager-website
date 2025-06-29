@@ -37,8 +37,8 @@ const props = defineProps({
 
 function exampleQuery(methodName, path, method) {
   // Basic example for GET/DELETE: curl, for POST/PUT: curl with -X and -d
-  let url = `http://localhost:3000${path.replace(/\{([^}]+)\}/g, ':$1')}`
-  let curl = `curl -X ${methodName.toUpperCase()} "${url}"`
+  let url = `http://localhost:3000${path.replace(/\{([^}]+)\}/g, ':$1')}`;
+  let curl = `curl -X ${methodName.toUpperCase()} "${url}" \\\n  -H \"x-api-key: YOUR_API_KEY_HERE\"`;
   if (["post", "put", "patch"].includes(methodName.toLowerCase())) {
     curl +=
       ' \\\n  -H "Content-Type: application/json" \\\n  -d "{}"';
