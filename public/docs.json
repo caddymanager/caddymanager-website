@@ -3,7 +3,7 @@
     "id": "about",
     "title": "About CaddyManager",
     "description": "Easily manage your Caddy2 servers using a modern web UI, built on the MEVN stack (MongoDB, Express, Vue, Node.js).",
-    "content": "<p>Easily manage your Caddy2 servers using a modern web UI, built on the MEVN stack (MongoDB, Express, Vue, Node.js).</p>",
+    "content": "<p><strong>CaddyManager</strong> lets you easily manage your Caddy2 servers using a modern web UI, built on the MEVN stack (MongoDB, Express, Vue, Node.js).</p>\n<blockquote class='bg-yellow-900/60 text-yellow-200 p-3 rounded mb-2'><b>⚠️ Caution:</b> CaddyManager is in early development. <u>Backup your Caddy configurations</u> and data before testing. Use at your own risk.</blockquote>\n<p><img src='https://caddymanager.online/screenshots/screenshots.gif' alt='CaddyManager Demo' class='rounded shadow-lg my-4 w-full max-w-2xl mx-auto' /></p>",
     "category": "overview",
     "order": 0,
     "icon": "🧑‍💻"
@@ -37,9 +37,9 @@
   },
   {
     "id": "env-vars",
-    "title": "Environment Variables",
-    "description": "List of important environment variables for both frontend and backend.",
-    "content": "<h4 class='font-bold mt-2 mb-1'>Frontend (<code>frontend/.env</code>)</h4>\n<ul class='list-disc list-inside mb-2'>\n<li><code>API_BASE_URL</code>: The base URL for backend API requests - should be the url for your backend api</li>\n<li><code>APP_NAME</code>: The display name for the app UI.</li>\n<li><code>DARK_MODE</code>: Set to <code>true</code> to enable dark mode by default. Currently not integrated fully.</li>\n</ul>\n<h4 class='font-bold mt-2 mb-1'>Backend (<code>backend/.env</code>)</h4>\n<ul class='list-disc list-inside mb-2'>\n<li><code>PORT</code>: Port for the backend server.</li>\n<li><code>MONGODB_URI</code>: MongoDB connection string (update credentials as needed).</li>\n<li><code>CORS_ORIGIN</code>: Allowed origin for frontend requests - should be the url of your frontend.</li>\n<li><code>LOG_LEVEL</code>: Logging verbosity.</li>\n<li><code>DEFAULT_CADDY_ADMIN_USER</code> / <code>DEFAULT_CADDY_ADMIN_PASSWORD</code>: Initial admin credentials.</li>\n<li><code>CADDY_SANDBOX_URL</code>: URL for the Caddy sandbox server (for testing) and/or validating configs.</li>\n<li><code>PING_INTERVAL</code> / <code>PING_TIMEOUT</code>: Health check intervals (ms).</li>\n<li><code>AUDIT_LOG_MAX_SIZE_MB</code> / <code>AUDIT_LOG_RETENTION_DAYS</code>: Audit log settings.</li>\n<li><code>JWT_SECRET</code>: Secret key for signing JWT tokens. <b>Change for production!</b></li>\n<li><code>JWT_EXPIRATION</code>: JWT token expiration time (e.g., <code>24h</code>).</li>\n</ul>\n<p class='text-xs text-white/70 mt-2'>Tip: Copy <code>.env.example</code> to <code>.env</code> in each directory and adjust values as needed for your environment.</p>",
+    "title": "Environment Variables (.env)",
+    "description": "Detailed .env setup for both frontend and backend.",
+    "content": "<h4 class='font-bold mt-2 mb-1'>Frontend (<code>frontend/.env</code>)</h4>\n<pre class='bg-black/80 text-white p-3 rounded text-xs overflow-x-auto mb-2'><code>API_BASE_URL=http://localhost:3000/api/v1\nAPP_NAME=Caddy Manager\nDARK_MODE=true</code></pre>\n<ul class='list-disc list-inside mb-2'>\n<li><code>API_BASE_URL</code>: The base URL for backend API requests - should be the url for your backend api</li>\n<li><code>APP_NAME</code>: The display name for the app UI.</li>\n<li><code>DARK_MODE</code>: Set to <code>true</code> to enable dark mode by default. Currently not integrated fully.</li>\n</ul>\n<h4 class='font-bold mt-4 mb-1'>Backend (<code>backend/.env</code>)</h4>\n<pre class='bg-black/80 text-white p-3 rounded text-xs overflow-x-auto mb-2'><code>PORT=3000\nMONGODB_URI=mongodb://mongoadmin:someSecretPassword@localhost:27017/caddymanager?authSource=admin\nCORS_ORIGIN=http://localhost:5173\nLOG_LEVEL=debug\nDEFAULT_CADDY_ADMIN_USER=admin\nDEFAULT_CADDY_ADMIN_PASSWORD=caddyrocks\nCADDY_SANDBOX_URL=http://localhost:2019\nPING_INTERVAL=30000\nPING_TIMEOUT=2000\nAUDIT_LOG_MAX_SIZE_MB=100\nAUDIT_LOG_RETENTION_DAYS=90\nJWT_SECRET=your_jwt_secret_key_here  # Change for production!\nJWT_EXPIRATION=24h</code></pre>\n<ul class='list-disc list-inside mb-2'>\n<li><code>PORT</code>: Port for the backend server.</li>\n<li><code>MONGODB_URI</code>: MongoDB connection string (update credentials as needed).</li>\n<li><code>CORS_ORIGIN</code>: Allowed origin for frontend requests - should be the url of your frontend.</li>\n<li><code>LOG_LEVEL</code>: Logging verbosity.</li>\n<li><code>DEFAULT_CADDY_ADMIN_USER</code> / <code>DEFAULT_CADDY_ADMIN_PASSWORD</code>: <b>Credentials for the Caddy admin endpoint, not for logging into CaddyManager.</b></li>\n<li><code>CADDY_SANDBOX_URL</code>: URL for the Caddy sandbox server (for testing) and/or validating configs.</li>\n<li><code>PING_INTERVAL</code> / <code>PING_TIMEOUT</code>: Health check intervals (ms).</li>\n<li><code>AUDIT_LOG_MAX_SIZE_MB</code> / <code>AUDIT_LOG_RETENTION_DAYS</code>: Audit log settings.</li>\n<li><code>JWT_SECRET</code> / <code>JWT_EXPIRATION</code>: JWT credential settings</li>\n</ul>\n<blockquote class='bg-yellow-900/60 text-yellow-200 p-3 rounded mb-2'><b>Note:</b> The default CaddyManager user when first creating the app is <code>admin</code> with password <code>caddyrocks</code>. You can change this after logging in.</blockquote>\n<p class='text-xs text-white/70 mt-2'>Tip: Copy <code>.env.example</code> to <code>.env</code> in each directory and adjust values as needed for your environment.</p>",
     "category": "reference",
     "order": 4,
     "icon": "🧩"
@@ -48,7 +48,7 @@
     "id": "docs",
     "title": "Documentation",
     "description": "Links to official documentation and API docs.",
-    "content": "<ul class='list-disc list-inside'>\n<li><a href='https://caddyserver.com/docs/' target='_blank' class='underline hover:text-accent-1-dark'>Caddy Documentation</a></li>\n<li><a href='http://localhost:3000/api-docs' target='_blank' class='underline hover:text-accent-1-dark'>Swagger API Docs</a> (after starting backend)</li>\n</ul>",
+    "content": "<ul class='list-disc list-inside'>\n<li><a href='https://caddyserver.com/docs/' target='_blank' class='underline hover:text-accent-1-dark'>Caddy Documentation</a></li>\n<li><a href='https://caddymanager.online/#/docs' target='_blank' class='underline hover:text-accent-1-dark'>CaddyManager Docs</a></li>\n<li><a href='http://localhost:3000/api-docs' target='_blank' class='underline hover:text-accent-1-dark'>Swagger API Docs</a> (after starting backend)</li>\n</ul>",
     "category": "resources",
     "order": 5,
     "icon": "📚"
@@ -90,13 +90,22 @@
     "icon": "🛠️"
   },
   {
+    "id": "how-to-use",
+    "title": "How to Use CaddyManager",
+    "description": "Step-by-step guide to using the CaddyManager web UI and features.",
+    "content": "<ol class='list-decimal list-inside mb-4'>\n<li><b>Access the Web UI:</b><br>Open your browser and go to <code>http://localhost</code> (or the address where your frontend is running).</li>\n<li><b>Sign In:</b><br>Log in using the admin credentials you set in your backend <code>.env</code> (<code>DEFAULT_CADDY_ADMIN_USER</code> / <code>DEFAULT_CADDY_ADMIN_PASSWORD</code>).</li>\n<li><b>Add and Manage Servers:</b><br>Navigate to the \"Servers\" section to add, edit, or remove Caddy servers.<br>You can monitor server status and view details for each server.</li>\n<li><b>Edit Configurations:</b><br>Use the \"Configurations\" section to create, edit, and validate Caddyfiles.<br>Built-in syntax highlighting and templates help you avoid errors.</li>\n<li><b>User & API Key Management:</b><br>Manage users and roles in the \"User Management\" section (admin only).<br>Generate and revoke API keys for programmatic access in the \"API Keys\" section.</li>\n<li><b>Audit Logs & Status:</b><br>View audit logs for all user/system actions in the \"Audit Logs\" section (admin only).</li>\n<li><b>API Documentation:</b><br>Explore and test backend APIs via the integrated Swagger UI at <code>/api-docs</code> (e.g., <code>http://localhost:3000/api-docs</code>).</li>\n</ol>",
+    "category": "guide",
+    "order": 10,
+    "icon": "🖥️"
+  },
+  {
     "id": "license",
     "title": "License & Legal",
     "description": "Project license information and legal disclaimer.",
     "content": "<p>This project is open source and available under the <a href='https://github.com/caddymanager/caddymanager/blob/main/LICENSE' target='_blank' class='underline hover:text-accent-1-dark'>MIT License</a>.</p>\n<div class='max-w-2xl mx-auto mt-6 text-xs text-white/80 leading-relaxed'><strong>Disclaimer:</strong> This project is not endorsed by, directly affiliated with, maintained, authorized, or sponsored by Caddy, Matthew Holt, Stack Holdings GmbH, or ZeroSSL. The name &quot;Caddy&quot; is a registered trademark of Stack Holdings GmbH. All information about Caddy, its history, and trademarks is provided for reference only.</div>",
     "category": "legal",
-    "order": 10,
-    "icon": "📄"
+    "order": 11,
+    "icon": "🛡️"
   },
   {
     "id": "contact",
@@ -104,16 +113,7 @@
     "description": "Contact and feedback information.",
     "content": "<ul class='list-disc list-inside'>\n<li>Email: <a href='mailto:bastian@bastianstolk.com' class='underline hover:text-accent-1-dark'>bastian@bastianstolk.com</a></li>\n<li>Open an issue or pull request on <a href='https://github.com/caddymanager/caddymanager' target='_blank' class='underline hover:text-accent-1-dark'>GitHub</a></li>\n</ul>",
     "category": "resources",
-    "order": 11,
+    "order": 12,
     "icon": "📬"
-  },
-  {
-    "id": "how-to-use",
-    "title": "How to Use CaddyManager",
-    "description": "Step-by-step guide to using the CaddyManager web UI and features.",
-    "content": "<h3 class='font-bold text-lg mb-2'>🖥️ How to Use CaddyManager</h3>\n<ol class='list-decimal list-inside mb-4'>\n<li><b>Access the Web UI:</b><br>Open your browser and go to <code>http://localhost</code> (or the address where your frontend is running).</li>\n<li><b>Sign In:</b><br>Log in using the admin credentials you set in your backend <code>.env</code> (<code>DEFAULT_CADDY_ADMIN_USER</code> / <code>DEFAULT_CADDY_ADMIN_PASSWORD</code>).</li>\n<li><b>Add and Manage Servers:</b><br>Navigate to the \"Servers\" section to add, edit, or remove Caddy servers.<br>You can monitor server status and view details for each server.</li>\n<li><b>Edit Configurations:</b><br>Use the \"Configurations\" section to create, edit, and validate Caddyfiles.<br>Built-in syntax highlighting and templates help you avoid errors.</li>\n<li><b>User & API Key Management:</b><br>Manage users and roles in the \"User Management\" section (admin only).<br>Generate and revoke API keys for programmatic access in the \"API Keys\" section.</li>\n<li><b>Audit Logs & Status:</b><br>View audit logs for all user/system actions in the \"Audit Logs\" section (admin only).</li>\n<li><b>API Documentation:</b><br>Explore and test backend APIs via the integrated Swagger UI at <code>/api-docs</code> (e.g., <code>http://localhost:3000/api-docs</code>).</li>\n</ol>",
-    "category": "guide",
-    "order": 2.5,
-    "icon": "🖥️"
   }
 ]
