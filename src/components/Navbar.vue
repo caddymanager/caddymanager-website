@@ -1,8 +1,8 @@
 <template>
   <header class="fixed py-4 px-4 md:px-12 flex justify-between items-center bg-white/10 backdrop-blur-md shadow-lg  w-full z-40 overflow-hidden">
     <div class="flex items-center gap-3 z-10">
-      <img src="https://caddyserver.com/resources/images/caddy-circle.svg" alt="Caddy Logo" class="h-10 w-10 bg-white/80 rounded-full p-1 shadow" />
-      <h1 class="text-2xl md:text-3xl font-extrabold text-white drop-shadow tracking-tight">Caddy Manager</h1>
+      <img src="/Logo_Plain_SVG.png" alt="Caddy Manager Logo" class="h-16 w-16" />
+      <h1 class="text-2xl md:text-3xl font-extrabold text-white drop-shadow tracking-tight -ml-2">Caddy Manager</h1>
     </div>
     <button @click="toggleMobileMenu" class="md:hidden flex items-center justify-center p-2 rounded-lg text-white hover:bg-primary/80 focus:outline-none focus:ring-2 focus:ring-primary z-50 transition-transform duration-200" aria-label="Open menu">
       <svg v-if="!mobileOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="28" height="28">
