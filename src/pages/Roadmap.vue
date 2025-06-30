@@ -63,6 +63,8 @@
               <li>Bulk actions using tags</li>
               <li>Dark mode</li>
               <li>Improved accesibility features</li>
+              <li>Caddy security recommendations</li>
+              <li>Option to use SQLite storage</li>
             </ul>
           </li>
           <li class="flex flex-col items-center w-1/3" style="transform: translateY(-20px);">
